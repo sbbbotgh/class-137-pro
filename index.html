@@ -1,0 +1,56 @@
+<html>
+<head>
+
+	<title>AI Video Surveillance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+
+  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <video id="bg_style" src="bg.mp4" autoplay muted loop></video>
+    <center>
+
+  <div class="btn btn-dark heading" >
+      <h5 style="color: red;">AI OBJECT FINDER</h5>
+      The input name which you will give should match the names present in CoCo model then only it will detect
+  </div>
+
+  <br><br>
+
+  <label style="color: whitesmoke;">Object Name : </label>
+
+  <br>
+
+  <input type="search" id="search" class="form-control" placeholder="Enter the object name"/>
+
+  <br>
+
+  <button type="submit" class="btn btn-success" onclick="start();">S T A R T</button>
+
+  <br><br>
+
+  <h3 id="status" class="btn btn-primary"></h3>
+
+  <h3 id="object" class="btn btn-warning"></h3>
+
+  <br><br>
+  
+</center>
+
+<footer>
+  <p>Developed by BOT_SB</p>
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+
+</html>
