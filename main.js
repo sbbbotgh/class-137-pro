@@ -28,7 +28,7 @@ function draw(){
                 document.getElementById("status").innerHTML = "Status : Object Detected";
                 document.getElementById("object").innerHTML = values+" found";
                 utterThis = new SpeechSynthesisUtterance(values + " found");
-                synth.speak(utterThis);
+                setTimeout(function () { synth.speak(utterThis); }, 250);
             }
             else{
                 document.getElementById("status").innerHTML = "Status : Object Detecting";
@@ -42,10 +42,6 @@ function start(){
     objectDetecter = ml5.objectDetector('cocossd', modelLoaded);
     document.getElementById("status").innerHTML = "Status : Detecting Objects";
     values = document.getElementById("search").value;
-    if (synth.speaking) {
-        synth.cancel();
-        setTimeout(function () { synth.speak(utterThis); }, 250);
-   }
 }
 
 function modelLoaded(){
