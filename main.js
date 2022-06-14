@@ -25,12 +25,14 @@ function draw(){
             if(objects[i].label == values){
                 video.stop();
                 objectDetecter.detect(gotResult);
-                document.getElementById("status").innerHTML = values+" found";
+                document.getElementById("status").innerHTML = "Status : Object Detected";
+                document.getElementById("object").innerHTML = values+" found";
                 utterThis = new SpeechSynthesisUtterance(values + " found");
                 synth.speak(utterThis);
             }
             else{
-                document.getElementById("status").innerHTML = values+" not found";
+                document.getElementById("status").innerHTML = "Status : Object Detecting";
+                document.getElementById("object").innerHTML = values+" not found";
             }
         }
     }
