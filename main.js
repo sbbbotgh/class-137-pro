@@ -42,7 +42,7 @@ function start(){
     objectDetecter = ml5.objectDetector('cocossd', modelLoaded);
     document.getElementById("status").innerHTML = "Status : Detecting Objects";
     values = document.getElementById("search").value;
-    if(speechSynthesis.speaking){
+    if(synth.speaking){
         synth.cancel();
     }
 }
