@@ -1,13 +1,15 @@
 objects = [];
 statuss = "";
 values = "";
-var input = document.getElementById("status");
-input.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
+
+input = document.getElementById("search");
+input.addEventListener("keyup", function(event) {
     event.preventDefault();
-    document.getElementById("starter").click();
-  }
+    if (event.keyCode === 13) {
+        document.getElementById("starter").click();
+    }
 });
+
 
 function load(){
     if(sessionStorage.getItem('key') == 'true'){
