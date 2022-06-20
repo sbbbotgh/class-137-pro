@@ -1,6 +1,13 @@
 objects = [];
 statuss = "";
 values = "";
+var input = document.getElementById("status");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("starter").click();
+  }
+});
 
 function load(){
     if(sessionStorage.getItem('key') == 'true'){
