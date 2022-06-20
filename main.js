@@ -2,6 +2,15 @@ objects = [];
 statuss = "";
 values = "";
 
+function load(){
+    if(sessionStorage.getItem('key') == 'true'){
+        values = sessionStorage.getItem('key1');
+        document.getElementById("search").value = values;
+        objectDetecter = ml5.objectDetector('cocossd', modelLoaded);
+        document.getElementById("status").innerHTML = "Status : Detecting Objects";
+    }
+}
+
 function setup(){
     canvas = createCanvas(480, 380);
     video = createCapture(VIDEO);
@@ -39,11 +48,10 @@ function draw(){
 }
 
 function start(){
-    objectDetecter = ml5.objectDetector('cocossd', modelLoaded);
-    document.getElementById("status").innerHTML = "Status : Detecting Objects";
     values = document.getElementById("search").value;
-    video.start();
-    synth.cancel();
+    sessionStorage.setItem('key', 'true');
+    sessionStorage.setItem('key1', values);
+    location.reload();
 }
 
 function modelLoaded(){
